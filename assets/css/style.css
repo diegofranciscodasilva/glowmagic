@@ -1,0 +1,1517 @@
+/* ===== VARIÁVEIS GLOBAIS DE TEMA (cores, raio, sombra, container) ===== */
+:root {
+    --bg: #1f0d1b;
+    --bg-deep: #190815;
+    --bg-soft: #281523;
+    /* atualmente não utilizada em nenhum seletor */
+    --card: #2d1927;
+    /* atualmente não utilizada em nenhum seletor */
+    --card-light: #382332;
+    /* atualmente não utilizada em nenhum seletor */
+    --text: #fad9ed;
+    --muted: #d5b9c7;
+    --gold: #e9c349;
+    --gold-light: #fde68a;
+    --pink: #db2777;
+    --pink-light: #ffb1c7;
+    --border: rgba(233, 195, 73, .22);
+    --radius: 16px;
+    --container: 1200px;
+    --shadow: 0 18px 45px rgba(0, 0, 0, .35);
+}
+
+/* ===== RESET BÁSICO ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+    /* compensa o header fixo ao usar âncoras (#id) */
+}
+
+body {
+    overflow-x: hidden;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    line-height: 1.7;
+}
+
+/* Trava o scroll do body quando o menu mobile ou o lightbox estão abertos (controlado via JS) */
+body.menu-open,
+body.lightbox-open {
+    overflow: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    border: 0;
+    font: inherit;
+    cursor: pointer;
+}
+
+/* Alinhamento vertical padrão para todos os ícones Remix Icon (ri-*) */
+i[class^="ri-"],
+i[class*=" ri-"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+/* ===== LAYOUT / CONTAINER GERAL ===== */
+.container {
+    width: min(100% - 40px, var(--container));
+    margin-inline: auto;
+}
+
+.narrow-container {
+    max-width: 960px;
+}
+
+.section {
+    position: relative;
+    padding: 110px 0;
+}
+
+/* ===== HEADER / NAVEGAÇÃO (fixo no topo, não requer alterações) ===== */
+.site-header {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 50;
+    border-bottom: 1px solid rgba(255, 177, 199, .04);
+    background: rgba(25, 8, 21, .88);
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 86px;
+    gap: 28px;
+}
+
+.brand img,
+.footer-brand img {
+    width: 125px;
+    height: 70px;
+    object-fit: contain;
+    background: #fff;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    margin-left: auto;
+}
+
+.nav-link {
+    position: relative;
+    padding: 10px 0;
+    color: #d7bfca;
+    font-family: Montserrat, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+/* Faixa indicadora abaixo do link ativo/hover (controlada via classe .active adicionada no JS) */
+.nav-link::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    border-radius: 20px;
+    background: linear-gradient(90deg, var(--pink), var(--gold));
+    content: "";
+    transform: scaleX(0);
+    transition: .3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #fff;
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* ===== ESTILO BASE COMPARTILHADO (botões, badges, tags, labels) ===== */
+.button,
+.badge,
+.card-tag,
+.image-label,
+.instagram-link,
+.footer-badges span,
+.footer-links a,
+.contact-info strong,
+.image-caption span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.button {
+    justify-content: center;
+    border-radius: 999px;
+    padding: 16px 25px;
+    font-family: Montserrat, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.button:hover,
+.small-button:hover {
+    transform: translateY(-3px);
+}
+
+.button-header,
+.button-primary {
+    color: #fff;
+    background: linear-gradient(110deg, #db2777, #ee4d82 55%, #e9c349);
+    box-shadow: 0 8px 24px rgba(219, 39, 119, .32);
+}
+
+.button-secondary {
+    color: var(--gold);
+    background: rgba(68, 46, 61, .55);
+}
+
+.menu-toggle {
+    display: none;
+    /* exibido apenas no mobile (ver media query max-width: 800px) */
+    color: var(--pink-light);
+    background: transparent;
+    font-size: 28px;
+}
+
+/* ===== HERO (banner principal) ===== */
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: 850px;
+    padding-top: 150px;
+    background:
+        radial-gradient(circle at 82% 28%, rgba(219, 39, 119, .14), transparent 30%),
+        linear-gradient(180deg, #190815, #281523);
+}
+
+/* Manchas de luz decorativas ao fundo do hero */
+.ambient {
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+}
+
+.ambient-one {
+    top: 10%;
+    left: -180px;
+    background: rgba(219, 39, 119, .14);
+}
+
+.ambient-two {
+    right: -180px;
+    bottom: 0;
+    background: rgba(233, 195, 73, .08);
+}
+
+.hero-grid,
+.about-grid,
+.craft-grid {
+    display: grid;
+    grid-template-columns: 1.12fr .88fr;
+    align-items: center;
+    gap: 64px;
+}
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.badge,
+.card-tag {
+    border-radius: 999px;
+    padding: 5px 16px;
+    color: #d8c4cc;
+    background: rgba(68, 46, 61, .7);
+    font-family: Montserrat, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.badge.gold {
+    color: var(--gold);
+}
+
+.badge.pink,
+.pink-tag {
+    color: var(--pink-light);
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Playfair Display", serif;
+    line-height: 1.15;
+}
+
+h1 {
+    max-width: 770px;
+    font-size: clamp(42px, 5vw, 72px);
+    font-weight: 600;
+    letter-spacing: -.04em;
+}
+
+h1 em,
+h2 em {
+    color: var(--pink-light);
+    font-style: italic;
+}
+
+.hero-description {
+    max-width: 720px;
+    margin: 26px 0 34px;
+    color: var(--muted);
+    font-size: 18px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+    margin-top: 60px;
+    padding: 28px 20px;
+    border-radius: 14px;
+    background: rgba(35, 11, 28, .62);
+}
+
+.hero-stats strong {
+    display: block;
+    color: var(--gold);
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+}
+
+.hero-stats span {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.glass-card {
+    padding: 20px;
+    border: 1px solid rgba(233, 195, 73, .14);
+    border-radius: var(--radius);
+    background: rgba(45, 25, 39, .72);
+    box-shadow: var(--shadow);
+}
+
+.product-image-wrap {
+    position: relative;
+    overflow: hidden;
+    height: 650px;
+    border-radius: 15px;
+}
+
+.product-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-label {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 7px 13px;
+    border-radius: 999px;
+    color: var(--gold);
+    background: rgba(25, 8, 21, .82);
+    font-family: Montserrat, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+
+.product-overlay {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 70px 20px 20px;
+    background: linear-gradient(transparent, rgba(25, 8, 21, .95));
+}
+
+.product-overlay h2 {
+    font-size: 28px;
+}
+
+.product-overlay p {
+    color: #dfc7d1;
+    font-size: 14px;
+}
+
+/* ===== SEÇÃO SOBRE / ESSÊNCIA ===== */
+.about {
+    background: #281523;
+}
+
+.about-image {
+    position: relative;
+}
+
+.about-image img {
+    width: 100%;
+    height: 610px;
+    border-radius: 14px;
+    object-fit: cover;
+}
+
+.floating-note {
+    position: absolute;
+    right: 28px;
+    bottom: -28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 22px;
+    border-radius: 14px;
+    background: #4a3044;
+    box-shadow: var(--shadow);
+}
+
+.sparkle,
+.contact-symbol {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    color: #fff;
+    background: linear-gradient(135deg, var(--pink), var(--gold));
+    font-size: 28px;
+}
+
+.floating-note strong,
+.floating-note small {
+    display: block;
+}
+
+.floating-note strong {
+    font-family: "Playfair Display", serif;
+    font-size: 19px;
+}
+
+.floating-note small {
+    color: var(--gold);
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 18px;
+    color: var(--gold);
+    font-family: Montserrat, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.about h2,
+.craft h2 {
+    max-width: 680px;
+    font-size: clamp(34px, 4vw, 52px);
+}
+
+.about-content>p,
+.craft-content>p {
+    margin-top: 22px;
+    color: var(--muted);
+}
+
+.mini-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 32px;
+}
+
+/* Cards com leve hover (elevação + fundo mais claro) */
+.mini-features article {
+    padding: 22px;
+    border-radius: 14px;
+    background: rgba(45, 25, 39, .8);
+    transition: transform .25s ease, background .25s ease;
+}
+
+.mini-features article:hover {
+    transform: translateY(-5px);
+    background: rgba(68, 46, 61, .9);
+}
+
+.mini-features article>span {
+    display: inline-flex;
+    color: var(--pink-light);
+    font-size: 25px;
+}
+
+.mini-features h3 {
+    margin: 8px 0;
+    font-size: 20px;
+}
+
+.mini-features p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* ===== SEÇÃO DIFERENCIAIS (benefícios) ===== */
+.benefits,
+.care {
+    background: var(--bg-deep);
+}
+
+.section-heading {
+    max-width: 800px;
+    margin-bottom: 60px;
+}
+
+.section-heading.centered {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.section-heading h2,
+.products-heading h2,
+.contact-box h2 {
+    font-size: clamp(34px, 4vw, 52px);
+}
+
+.section-heading p,
+.products-heading>p {
+    margin-top: 18px;
+    color: var(--muted);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/* Card de diferencial com hover: borda dourada + fundo mais claro + leve elevação */
+.benefit-card {
+    min-height: 265px;
+    padding: 30px;
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    background: rgba(56, 35, 50, .62);
+    transition: transform .25s ease, background .25s ease, border-color .25s ease;
+}
+
+.benefit-card:hover {
+    border-color: var(--border);
+    background: rgba(68, 46, 61, .9);
+    transform: translateY(-6px);
+}
+
+.benefit-icon {
+    display: grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    margin-bottom: 25px;
+    border-radius: 14px;
+    font-size: 30px;
+}
+
+.pink-icon {
+    color: var(--pink-light);
+    background: rgba(219, 39, 119, .22);
+}
+
+.gold-icon {
+    color: var(--gold);
+    background: rgba(233, 195, 73, .2);
+}
+
+.benefit-card h3 {
+    margin-bottom: 12px;
+    font-size: 25px;
+}
+
+.benefit-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.benefit-card strong {
+    display: block;
+    margin-top: 20px;
+    color: var(--gold);
+    font-family: Montserrat, sans-serif;
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+/* ===== SEÇÃO PRODUTOS / FILTROS ===== */
+.products,
+.gallery,
+.faq {
+    background: #281523;
+}
+
+.products-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.products-heading>p {
+    max-width: 420px;
+}
+
+.filter-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 38px;
+}
+
+/* Botão de filtro: estado "active" controlado via JS ao clicar */
+.filter-button {
+    border-radius: 999px;
+    padding: 12px 18px;
+    color: #d9c0cb;
+    background: rgba(45, 25, 39, .9);
+    font-family: Montserrat, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    transition: .25s ease;
+}
+
+.filter-button.active,
+.filter-button:hover {
+    color: #382332;
+    background: var(--gold);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.product-card {
+    overflow: hidden;
+    border: 1px solid rgba(233, 195, 73, .08);
+    border-radius: var(--radius);
+    background: #321d2c;
+    transition: transform .25s ease, border-color .25s ease;
+}
+
+.product-card:hover {
+    border-color: var(--border);
+    transform: translateY(-6px);
+}
+
+/* Classe adicionada/removida via JS ao aplicar o filtro de categoria */
+.product-card.hidden {
+    display: none;
+}
+
+.card-image {
+    position: relative;
+    height: 345px;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+}
+
+.product-body {
+    padding: 25px;
+}
+
+.product-category {
+    color: var(--gold);
+    font-family: Montserrat, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.product-body h3 {
+    margin: 12px 0;
+    font-size: 27px;
+}
+
+.product-body p {
+    min-height: 78px;
+    /* garante altura consistente entre cards com textos de tamanhos diferentes */
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.product-footer {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.product-footer small,
+.product-footer strong {
+    display: block;
+}
+
+.product-footer small {
+    color: #d8beca;
+    font-family: Montserrat, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.product-footer strong {
+    color: var(--gold);
+    font-family: "Playfair Display", serif;
+    font-size: 19px;
+    line-height: 1.2;
+}
+
+.small-button {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 7px;
+    border-radius: 999px;
+    padding: 11px 17px;
+    color: #fff;
+    background: var(--pink);
+    font-family: Montserrat, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: .25s ease;
+}
+
+/* ===== SEÇÃO PROCESSO ARTESANAL (steps) ===== */
+.craft {
+    background: var(--bg-deep);
+}
+
+.steps {
+    display: grid;
+    gap: 22px;
+    margin-top: 34px;
+}
+
+.steps article {
+    display: flex;
+    gap: 18px;
+}
+
+.steps article>span {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: var(--pink-light);
+    background: rgba(219, 39, 119, .2);
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+}
+
+.steps h3 {
+    margin-bottom: 4px;
+    font-size: 21px;
+}
+
+.steps p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.craft-image img {
+    width: 100%;
+    height: 520px;
+    border-radius: 14px;
+    object-fit: cover;
+}
+
+.image-caption {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding-top: 16px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.image-caption span:first-child {
+    color: var(--gold);
+    font-family: Montserrat, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+/* ===== GALERIA (grid de imagens que abrem o lightbox) ===== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    height: 245px;
+    padding: 0;
+    border-radius: 14px;
+    background: transparent;
+    border: 1px solid rgba(233, 195, 73, .12);
+    cursor: zoom-in;
+    /* indica visualmente que a imagem é clicável/ampliável */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .4s ease;
+}
+
+.gallery-item:hover img,
+.gallery-item:focus-visible img {
+    transform: scale(1.07);
+}
+
+.gallery-zoom {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 50%;
+    color: #fff;
+    background: rgba(25, 8, 21, .72);
+    opacity: 0;
+    transform: translateY(6px);
+    transition: .3s ease;
+}
+
+.gallery-item:hover .gallery-zoom,
+.gallery-item:focus-visible .gallery-zoom {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== ACCORDION / FAQ =====
+   Ícone alternado entre "+" e "-" via JS (classes ri-add-line / ri-subtract-line).
+   Abertura/fechamento animado usando grid-template-rows (0fr -> 1fr). */
+.accordion-list {
+    display: grid;
+    gap: 14px;
+}
+
+.accordion-item {
+    overflow: hidden;
+    border-radius: 14px;
+    background: rgba(56, 35, 50, .58);
+}
+
+.accordion-button {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    width: 100%;
+    gap: 14px;
+    padding: 22px;
+    color: var(--text);
+    background: transparent;
+    text-align: left;
+    font-family: "Playfair Display", serif;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.accordion-leading-icon,
+.accordion-icon {
+    color: var(--gold);
+}
+
+.accordion-leading-icon {
+    font-size: 21px;
+}
+
+.accordion-icon {
+    font-family: sans-serif;
+    font-size: 23px;
+}
+
+.accordion-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    /* truque de animação: 0fr = fechado */
+    transition: grid-template-rows .3s ease;
+}
+
+.accordion-content p {
+    overflow: hidden;
+    padding: 0 22px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.accordion-item.open .accordion-content {
+    grid-template-rows: 1fr;
+    /* 1fr = aberto (classe adicionada via JS) */
+}
+
+.accordion-item.open .accordion-content p {
+    padding-bottom: 22px;
+}
+
+/* ===== CONTATO / CTA FINAL ===== */
+.contact {
+    background: var(--bg-deep);
+}
+
+.contact-box {
+    padding: 90px 30px;
+    border-radius: 30px;
+    background: #321d2c;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.contact-symbol {
+    margin: 0 auto 28px;
+}
+
+.contact-box h2 {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.contact-box>p {
+    max-width: 680px;
+    margin: 24px auto 35px;
+    color: var(--muted);
+    font-size: 18px;
+}
+
+.contact-button {
+    min-width: 350px;
+}
+
+/* Link de destaque do Instagram/WhatsApp no CTA final */
+.instagram-link {
+    width: fit-content;
+    margin: 28px auto 0;
+    color: var(--gold);
+    font-size: 14px;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 850px;
+    margin: 65px auto 0;
+    padding: 22px;
+    border-radius: 14px;
+    background: rgba(45, 25, 39, .72);
+    text-align: left;
+}
+
+.contact-info div {
+    padding: 0 20px;
+}
+
+.contact-info div+div {
+    border-left: 1px solid var(--border);
+}
+
+.contact-info strong,
+.contact-info span {
+    display: block;
+}
+
+.contact-info strong {
+    color: var(--gold);
+    font-family: Montserrat, sans-serif;
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.contact-info strong i {
+    color: var(--pink-light);
+    font-size: 17px;
+}
+
+.contact-info span {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* ===== RODAPÉ ===== */
+.site-footer {
+    padding: 80px 0 45px;
+    background: #190815;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.footer-brand img {
+    width: 145px;
+}
+
+.footer-badges,
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+}
+
+.footer-badges span {
+    color: var(--gold);
+    font-family: Montserrat, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.footer-badges span+span {
+    color: var(--pink-light);
+}
+
+.footer-links a,
+.copyright {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* ===== BOTÕES FLUTUANTES (WhatsApp fixo + scroll-to-top) ===== */
+.whatsapp-floating,
+.scroll-top {
+    position: fixed;
+    right: 24px;
+    z-index: 40;
+    display: grid;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    box-shadow: 0 8px 25px rgba(219, 39, 119, .38);
+}
+
+.whatsapp-floating {
+    bottom: 90px;
+    color: #fff;
+    background: var(--pink);
+    font-size: 27px;
+}
+
+/* Visibilidade controlada via JS (classe .visible) conforme o scroll da página */
+.scroll-top {
+    right: 25px;
+    bottom: 24px;
+    color: var(--pink-light);
+    background: #432d40;
+    font-size: 22px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: .3s ease;
+}
+
+/* Animação infinita de "flutuação" enquanto o botão está visível */
+.scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    animation: float-arrow 1.5s ease-in-out infinite;
+}
+
+@keyframes float-arrow {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+/* ===== LIGHTBOX (visualização ampliada da galeria) ===== */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background: rgba(15, 4, 12, .92);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s ease;
+}
+
+/* Classe .open adicionada/removida via JS ao abrir/fechar */
+.lightbox.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-image {
+    max-width: min(900px, 90vw);
+    max-height: 82vh;
+    min-width: 0;
+    border-radius: 12px;
+    background: #190815;
+    object-fit: contain;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    color: #fff;
+    background: rgba(68, 46, 61, .85);
+    font-size: 28px;
+}
+
+.lightbox-close {
+    top: 25px;
+    right: 25px;
+}
+
+.lightbox-prev {
+    left: 25px;
+}
+
+.lightbox-next {
+    right: 25px;
+}
+
+.gold-tag {
+    color: var(--gold);
+    border-color: rgba(233, 195, 73, .35);
+}
+
+/* ===== SEÇÃO "COMO CUIDAR DA SUA PEÇA" ===== */
+.care-feature {
+    margin-bottom: 30px;
+}
+
+.care-feature img {
+    width: 100%;
+    max-height: 620px;
+    border-radius: 14px;
+    object-fit: cover;
+}
+
+/* Link de WhatsApp com destaque visual (contorno ao hover/focus) */
+.whatsapp-link {
+    position: relative;
+    color: var(--pink-light, #ffb1c7);
+}
+
+.whatsapp-link::after {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border: 1px solid rgba(255, 177, 199, .28);
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity .25s ease;
+    pointer-events: none;
+}
+
+.whatsapp-link:hover::after,
+.whatsapp-link:focus-visible::after {
+    opacity: 1;
+}
+
+/* Quando o link de WhatsApp usa o estilo de botão principal, o texto fica branco */
+.button-header.whatsapp-link,
+.button-primary.whatsapp-link {
+    color: #fff;
+}
+
+/* ===== ACESSIBILIDADE: estados de foco visível (navegação por teclado) ===== */
+.gallery-item:focus-visible,
+.accordion-button:focus-visible,
+.filter-button:focus-visible,
+.button:focus-visible,
+.menu-toggle:focus-visible,
+.lightbox-close:focus-visible,
+.lightbox-prev:focus-visible,
+.lightbox-next:focus-visible,
+.scroll-top:focus-visible {
+    outline: 2px solid var(--gold-light);
+    outline-offset: 3px;
+}
+
+/* Respeita a preferência do usuário por menos movimento/animação */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+/* Telas médias (tablets) */
+@media (max-width: 1100px) {
+    .main-nav {
+        gap: 15px;
+    }
+
+    .button-header {
+        padding: 13px 15px;
+        font-size: 11px;
+    }
+
+    .hero-grid,
+    .about-grid,
+    .craft-grid {
+        gap: 35px;
+    }
+
+    .benefits-grid,
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile: menu hambúrguer + colunas empilhadas */
+@media (max-width: 800px) {
+    .section {
+        padding: 80px 0;
+    }
+
+    .container {
+        width: min(100% - 30px, var(--container));
+    }
+
+    .header-content {
+        min-height: 72px;
+    }
+
+    .brand img {
+        width: 100px;
+        height: 55px;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 72px;
+        right: 15px;
+        left: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 15px;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: rgba(25, 8, 21, .98);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: .3s ease;
+    }
+
+    .main-nav.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-link {
+        padding: 14px;
+    }
+
+    .button-header {
+        display: none;
+    }
+
+    .hero {
+        min-height: 0;
+        padding-top: 125px;
+    }
+
+    .hero-grid,
+    .about-grid,
+    .craft-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .badges,
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-description {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .hero-stats {
+        text-align: left;
+    }
+
+    .product-image-wrap {
+        height: 520px;
+    }
+
+    .products-heading {
+        display: block;
+        text-align: center;
+    }
+
+    .products-heading>p {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .filter-list {
+        justify-content: center;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .contact-info div {
+        padding: 0;
+    }
+
+    .contact-info div+div {
+        padding-top: 22px;
+        border-top: 1px solid var(--border);
+        border-left: 0;
+    }
+}
+
+/* Ajustes finos adicionais para mobile (menu acima do lightbox, imagem de cuidados sem limite de altura) */
+@media (max-width: 800px) {
+    .main-nav {
+        z-index: 60;
+    }
+
+    .care-feature img {
+        max-height: none;
+    }
+}
+
+/* Telas pequenas: ajustes de galeria e espaçamento */
+@media (max-width: 560px) {
+    .product-body p {
+        min-height: 0;
+    }
+
+    .gallery-item {
+        min-height: 170px;
+    }
+
+    .care-feature {
+        padding: 10px;
+    }
+}
+
+/* Telas muito pequenas: grids viram coluna única, imagens menores */
+@media (max-width: 560px) {
+    h1 {
+        font-size: 42px;
+    }
+
+    .hero-stats,
+    .mini-features,
+    .benefits-grid,
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-stats {
+        gap: 18px;
+    }
+
+    .product-image-wrap,
+    .about-image img,
+    .craft-image img {
+        height: 430px;
+    }
+
+    .floating-note {
+        right: 12px;
+        bottom: -28px;
+        left: 12px;
+    }
+
+    .product-body h3 {
+        font-size: 24px;
+    }
+
+    .product-footer {
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .small-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .gallery-item {
+        height: 170px;
+    }
+
+    /* Em telas pequenas, ícone de zoom fica sempre visível (sem hover em touch) */
+    .gallery-zoom {
+        opacity: 1;
+        transform: none;
+    }
+
+    .accordion-button {
+        gap: 10px;
+        padding: 18px;
+        font-size: 18px;
+    }
+
+    .contact-box {
+        padding: 60px 18px;
+    }
+
+    .contact-button {
+        min-width: 0;
+        width: 100%;
+        font-size: 11px;
+    }
+
+    .whatsapp-floating,
+    .scroll-top {
+        right: 15px;
+    }
+
+    .lightbox {
+        padding: 20px;
+    }
+
+    .lightbox-prev {
+        left: 10px;
+    }
+
+    .lightbox-next {
+        right: 10px;
+    }
+}

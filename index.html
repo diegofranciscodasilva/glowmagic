@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Configurações básicas do documento -->
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura a viewport para responsividade -->
+    <meta name="description"
+        content="Glow Magic — copos personalizados, acessórios artesanais e peças exclusivas feitas à mão.">
+    <!-- Descrição para SEO -->
+    <meta name="theme-color" content="#1f0d1b"> <!-- Cor do tema para navegadores mobile -->
+
+    <title>Glow Magic — Copos Personalizados</title> <!-- Título da página exibido na aba do navegador -->
+
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/images/glow_magic_logotipo.png" type="image/png">
+
+    <!-- Pré-conexão para fontes do Google Fonts (otimização de carregamento) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Importação das fontes personalizadas -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Importação da biblioteca de ícones Remix Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+
+    <!-- Link para o arquivo de estilos CSS personalizado -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <!-- Cabeçalho do site -->
+    <header class="site-header">
+        <div class="container header-content">
+            <!-- Logo da marca com link para o início da página -->
+            <a class="brand" href="#inicio" aria-label="Glow Magic — início">
+                <img src="./assets/images/glow_magic_logotipo.png" alt="Logo Glow Magic" width="125" height="70">
+            </a>
+
+            <!-- Botão de alternar menu para dispositivos móveis -->
+            <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"
+                aria-controls="main-nav">
+                <i class="ri-menu-line" aria-hidden="true"></i> <!-- Ícone de hambúrguer -->
+            </button>
+
+            <!-- Navegação principal do site -->
+            <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+                <a class="nav-link active" href="#inicio">Início</a>
+                <a class="nav-link" href="#diferenciais">Diferenciais</a>
+                <a class="nav-link" href="#produtos">Produtos</a>
+                <a class="nav-link" href="#galeria">Galeria</a>
+                <a class="nav-link" href="#faq">FAQ</a>
+            </nav>
+
+            <!-- Botão de contato via WhatsApp no cabeçalho -->
+            <a class="button button-header whatsapp-link" href="https://wa.me/5511959797360" target="_blank"
+                rel="noopener noreferrer">
+                <i class="ri-whatsapp-line" aria-hidden="true"></i>
+                Falar no WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal da página -->
+    <main>
+        <!-- Seção Hero (primeira dobra) -->
+        <section class="hero section" id="inicio">
+            <!-- Elementos de fundo ambiente para efeito visual -->
+            <div class="ambient ambient-one"></div>
+            <div class="ambient ambient-two"></div>
+
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <!-- Badges de destaque -->
+                    <div class="badges">
+                        <span class="badge gold">
+                            <i class="ri-hand-heart-line" aria-hidden="true"></i>
+                            100% Feito à Mão
+                        </span>
+
+                        <span class="badge pink">
+                            <i class="ri-vip-diamond-line" aria-hidden="true"></i>
+                            Peça Única por Cliente
+                        </span>
+
+                        <span class="badge">
+                            <i class="ri-contrast-2-line" aria-hidden="true"></i>
+                            Acabamento Marmorizado
+                        </span>
+                    </div>
+
+                    <!-- Título principal da página -->
+                    <h1>
+                        Não é só um copo, é uma
+                        <em>experiência de luxo.</em>
+                    </h1>
+
+                    <!-- Descrição da seção Hero -->
+                    <p class="hero-description">
+                        Copos personalizados e acessórios artesanais feitos com glitter,
+                        resina, cristais e muito carinho para transformar paixões em peças
+                        únicas e colecionáveis.
+                    </p>
+
+                    <!-- Botões de ação da seção Hero -->
+                    <div class="hero-actions">
+                        <a class="button button-primary whatsapp-link" href="https://wa.me/5511959797360"
+                            target="_blank" rel="noopener noreferrer">
+                            <i class="ri-whatsapp-line" aria-hidden="true"></i>
+                            Falar no WhatsApp
+                        </a>
+
+                        <a class="button button-secondary" href="#produtos">
+                            Ver Coleções
+                            <i class="ri-arrow-down-line" aria-hidden="true"></i>
+                        </a>
+                    </div>
+
+                    <!-- Estatísticas de destaque -->
+                    <div class="hero-stats">
+                        <div>
+                            <strong>100%</strong>
+                            <span>Artesanal & Autoral</span>
+                        </div>
+
+                        <div>
+                            <strong>Premium</strong>
+                            <span>Materiais Selecionados</span>
+                        </div>
+
+                        <div>
+                            <strong>Única</strong>
+                            <span>Peça Personalizada</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card de produto em destaque na seção Hero -->
+                <div class="hero-product glass-card">
+                    <div class="product-image-wrap">
+                        <img src="./assets/images/copo-sonserina-personalizado.png"
+                            alt="Apresentação institucional de um copo personalizado Glow Magic" loading="eager">
+
+                        <span class="image-label">
+                            <i class="ri-sparkling-2-line" aria-hidden="true"></i>
+                            Glow Magic
+                        </span>
+
+                        <div class="product-overlay">
+                            <h2>Copos Personalizados</h2>
+                            <p>
+                                Detalhes que encantam, materiais premium e acabamento feito à mão.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Sobre a empresa -->
+        <section class="about section" id="sobre">
+            <div class="container about-grid">
+                <!-- Imagem e nota flutuante na seção Sobre -->
+                <div class="about-image glass-card">
+                    <img src="./assets/images/glow-magic-materiais-e-insumos.png"
+                        alt="Materiais e insumos utilizados na produção artesanal Glow Magic" loading="lazy">
+
+                    <div class="floating-note">
+                        <span class="sparkle">
+                            <i class="ri-sparkling-2-line" aria-hidden="true"></i>
+                        </span>
+
+                        <div>
+                            <strong>Mágica em Cada Detalhe</strong>
+                            <small>Ateliê Autoral Glow Magic</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conteúdo textual da seção Sobre -->
+                <div class="about-content">
+                    <span class="eyebrow">
+                        <i class="ri-history-line" aria-hidden="true"></i>
+                        Nossa Essência & Filosofia
+                    </span>
+
+                    <h2>
+                        Transformando momentos e paixões em
+                        <em>joias funcionais.</em>
+                    </h2>
+
+                    <p>
+                        A <strong>Glow Magic</strong> cria copos personalizados e acessórios
+                        artesanais para quem deseja carregar sua personalidade, seus
+                        personagens favoritos e suas memórias em peças especiais.
+                    </p>
+
+                    <p>
+                        Cada criação é montada com atenção aos detalhes, materiais
+                        selecionados e acabamento cuidadoso, respeitando o tempo necessário
+                        para que o resultado seja bonito, resistente e exclusivo.
+                    </p>
+
+                    <!-- Mini-recursos ou diferenciais -->
+                    <div class="mini-features">
+                        <article>
+                            <span>
+                                <i class="ri-palette-line" aria-hidden="true"></i>
+                            </span>
+                            <h3>Curadoria de Cores</h3>
+                            <p>
+                                Combinações pensadas para valorizar cada tema e personalidade.
+                            </p>
+                        </article>
+
+                        <article>
+                            <span>
+                                <i class="ri-shield-check-line" aria-hidden="true"></i>
+                            </span>
+                            <h3>Qualidade & Brilho</h3>
+                            <p>
+                                Materiais selecionados para um acabamento marcante e durável.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Diferenciais/Benefícios -->
+        <section class="benefits section" id="diferenciais">
+            <div class="container">
+                <!-- Cabeçalho da seção -->
+                <div class="section-heading centered">
+                    <span class="eyebrow">
+                        <i class="ri-vip-crown-line" aria-hidden="true"></i>
+                        O Toque Glow Magic
+                    </span>
+
+                    <h2>Diferenciais que Impressionam</h2>
+
+                    <p>
+                        Cada peça é planejada para entregar beleza, identidade e uma
+                        experiência especial desde a criação até o recebimento.
+                    </p>
+                </div>
+
+                <!-- Grade de cards de benefícios -->
+                <div class="benefits-grid">
+                    <article class="benefit-card">
+                        <span class="benefit-icon pink-icon">
+                            <i class="ri-hand-heart-line" aria-hidden="true"></i>
+                        </span>
+                        <h3>Feito à Mão com Amor</h3>
+                        <p>
+                            Cada detalhe é produzido artesanalmente, tornando cada peça
+                            diferente e especial.
+                        </p>
+                        <strong>Edição Exclusiva</strong>
+                    </article>
+
+                    <article class="benefit-card">
+                        <span class="benefit-icon gold-icon">
+                            <i class="ri-flask-line" aria-hidden="true"></i>
+                        </span>
+                        <h3>Materiais Selecionados</h3>
+                        <p>
+                            Glitters, resinas, cristais e acessórios escolhidos para valorizar
+                            o resultado final.
+                        </p>
+                        <strong>Acabamento Premium</strong>
+                    </article>
+
+                    <article class="benefit-card">
+                        <span class="benefit-icon pink-icon">
+                            <i class="ri-fingerprint-line" aria-hidden="true"></i>
+                        </span>
+                        <h3>Personalização Total</h3>
+                        <p>
+                            Escolha tema, cores, nome, personagens e detalhes para criar algo
+                            com a sua identidade.
+                        </p>
+                        <strong>Sob Encomenda</strong>
+                    </article>
+
+                    <article class="benefit-card">
+                        <span class="benefit-icon gold-icon">
+                            <i class="ri-contrast-2-line" aria-hidden="true"></i>
+                        </span>
+                        <h3>Detalhes Encantadores</h3>
+                        <p>
+                            Texturas, brilhos, pingentes e elementos decorativos criados para
+                            chamar atenção.
+                        </p>
+                        <strong>Visual Autoral</strong>
+                    </article>
+
+                    <article class="benefit-card">
+                        <span class="benefit-icon pink-icon">
+                            <i class="ri-shield-check-line" aria-hidden="true"></i>
+                        </span>
+                        <h3>Acabamento Cuidadoso</h3>
+                        <p>
+                            A peça passa por conferência e finalização antes de ser preparada
+                            para o envio.
+                        </p>
+                        <strong>Controle de Qualidade</strong>
+                    </article>
+
+                    <article class="benefit-card">
+                        <span class="benefit-icon gold-icon">
+                            <i class="ri-gift-line" aria-hidden="true"></i>
+                        </span>
+                        <h3>Presente Especial</h3>
+                        <p>
+                            Uma opção criativa para surpreender alguém com uma peça feita sob
+                            medida.
+                        </p>
+                        <strong>Experiência Única</strong>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Produtos -->
+        <section class="products section" id="produtos">
+            <div class="container">
+                <!-- Cabeçalho da seção de produtos -->
+                <div class="products-heading">
+                    <div>
+                        <span class="eyebrow">
+                            <i class="ri-sparkling-2-line" aria-hidden="true"></i>
+                            Coleções Personalizadas
+                        </span>
+
+                        <h2>Produtos em Destaque</h2>
+
+                        <p>
+                            Escolha uma inspiração ou fale conosco para desenvolver uma peça
+                            personalizada.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Lista de botões de filtro de produtos -->
+                <div class="filter-list">
+                    <button class="filter-button active" data-filter="all">Todas</button>
+                    <button class="filter-button" data-filter="pop">Pop & Desenhos</button>
+                    <button class="filter-button" data-filter="magico">Mundo Mágico</button>
+                    <button class="filter-button" data-filter="musica-series">Música & Séries</button>
+                    <button class="filter-button" data-filter="acessorios">Acessórios</button>
+                </div>
+
+                <!-- Grade de cards de produtos -->
+                <div class="products-grid">
+                    <!-- Card de produto: Copo Barbie -->
+                    <article class="product-card" data-category="pop">
+                        <div class="card-image">
+                            <img src="./assets/images/copo-barbie-personalizado.png" alt="Copo Barbie personalizado"
+                                loading="lazy">
+                            <span class="badge card-tag pink-tag">Personalizado</span>
+                        </div>
+                        <div class="product-body">
+                            <span class="product-category">Coleção Pop</span>
+                            <h3>Copo Barbie Personalizado</h3>
+                            <p>
+                                Uma composição pink com brilho, detalhes temáticos e acabamento
+                                feito para encantar.
+                            </p>
+                            <div class="product-footer">
+                                <div>
+                                    <small>Valor sob consulta</small>
+                                    <strong>Peça Autoral</strong>
+                                </div>
+                                <a class="small-button whatsapp-link"
+                                    href="https://wa.me/551197101154?text=Olá!%20Gostaria%20de%20encomendar%20o%20Copo%20Barbie%20Personalizado."
+                                    target="_blank" rel="noopener noreferrer">
+                                    <i class="ri-whatsapp-line" aria-hidden="true"></i>
+                                    Encomendar
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card de produto: Copo Enhypen -->
+                    <article class="product-card" data-category="musica-series">
+                        <div class="card-image">
+                            <img src="./assets/images/copo-enhypen-personalizado.png" alt="Copo Enhypen personalizado"
+                                loading="lazy">
+                            <span class="badge card-tag gold-tag">Música</span>
+                        </div>
+                        <div class="product-body">
+                            <span class="product-category">Coleção K-Pop</span>
+                            <h3>Copo Enhypen Personalizado</h3>
+                            <p>
+                                Design temático com cores, imagens e detalhes desenvolvidos para
+                                representar o seu grupo favorito.
+                            </p>
+                            <div class="product-footer">
+                                <div>
+                                    <small>Valor sob consulta</small>
+                                    <strong>Sob Encomenda</strong>
+                                </div>
+                                <a class="small-button whatsapp-link"
+                                    href="https://wa.me/551197101154?text=Olá!%20Gostaria%20de%20encomendar%20o%20Copo%20Enhypen%20Personalizado."
+                                    target="_blank" rel="noopener noreferrer">
+                                    <i class="ri-whatsapp-line" aria-hidden="true"></i>
+                                    Encomendar
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card de produto: Copo Fundo do Mar -->
+                    <article class="product-card" data-category="magico">
+                        <div class="card-image">
+                            <img src="./assets/images/copo-fundo-do-mar-personalizado.png"
+                                alt="Copo Fundo do Mar personalizado" loading="lazy">
+                            <span class="badge card-tag pink-tag">Tema Oceânico</span>
+                        </div>
+                        <div class="product-body">
+                            <span class="product-category">Coleção Temática</span>
+                            <h3>Copo Fundo do Mar</h3>
+                            <p>
+                                Tons azuis, brilhos e elementos marítimos para uma peça de
+                                presença marcante.
+                            </p>
+                            <div class="product-footer">
+                                <div>
+                                    <small>Valor sob consulta</small>
+                                    <strong>Arte Personalizada</strong>
+                                </div>
+                                <a class="small-button whatsapp-link"
+                                    href="https://wa.me/551197101154?text=Olá!%20Gostaria%20de%20encomendar%20o%20Copo%20Fundo%20do%20Mar."
+                                    target="_blank" rel="noopener noreferrer">
+                                    <i class="ri-whatsapp-line" aria-hidden="true"></i>
+                                    Encomendar
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card de produto: Copo Hello Kitty -->
+                    <article class="product-card" data-category="pop">
+                        <div class="card-image">
+                            <img src="./assets/images/copo-hello-kitty-personalizado.png"
+                                alt="Copo Hello Kitty personalizado" loading="lazy">
+                            <span class="badge card-tag gold-tag">Cute</span>
+                        </div>
+                        <div class="product-body">
+                            <span class="product-category">Coleção Cute</span>
+                            <h3>Copo Hello Kitty</h3>
+                            <p>
+                                Uma composição delicada, brilhante e divertida para quem ama
+                                detalhes cor-de-rosa.
+                            </p>
+                            <div class="product-footer">
+                                <div>
+                                    <small>Valor sob consulta</small>
+                                    <strong>Edição Especial</strong>
+                                </div>
+                                <a class="small-button whatsapp-link"
+                                    href="https://wa.me/551197101154?text=Olá!%20Gostaria%20de%20encomendar%20o%20Copo%20Hello%20Kitty."
+                                    target="_blank" rel="noopener noreferrer">
+                                    <i class="ri-whatsapp-line" aria-hidden="true"></i>
+                                    Encomendar
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card de produto: Copo High School Musical -->
+                    <article class="product-card" data-category="musica-series">
+                        <div class="card-image">
+                            <img src="./assets/images/copo-high-school-musical-personalizado.png"
+                                alt="Copo High School Musical personalizado" loading="lazy">
+                            <span class="badge card-tag pink-tag">Nostalgia</span>
+                        </div>
+                        <div class="product-body">
+                            <span class="product-category">Coleção Nostalgia</span>
+                            <h3>High School Musical</h3>
+                            <p>
+                                Uma criação temática para transformar memórias especiais em uma
+                                peça exclusiva.
+                            </p>
+                            <div class="product-footer">
+                                <div>
+                                    <small>Valor sob consulta</small>
+                                    <strong>Peça Exclusiva</strong>
+                                </div>
+                                <a class="small-button whatsapp-link"
+                                    href="https://wa.me/551197101154?text=Olá!%20Gostaria%20de%20encomendar%20o%20Copo%20High%20School%20Musical."
+                                    target="_blank" rel="noopener noreferrer">
+                                    <i class="ri-whatsapp-line" aria-hidden="true"></i>
+                                    Encomendar
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card de produto: Copo Lufa-Lufa -->
+                    <article class="product-card" data-category="magico">
+                        <div class="card-image">
+                            <img src="./assets/images/copo-lufa-lufa-personalizado.png"
+                                alt="Copo Lufa-Lufa personalizado" loading="lazy">
+                            <span class="badge card-tag gold-tag">Mundo Mágico</span>
+                        </div>
+                        <div class="product-body">
+                            <span class="product-category">Wizarding World</span>
+                            <h3>Copo Lufa-Lufa</h3>
+                            <p>
+                                Tons dourados e detalhes temáticos inspirados na casa Lufa-Lufa.
+                            </p>
+                            <div class="product-footer">
+                                <div>
+                                    <small>Valor sob consulta</small>
+                                    <strong>Sob Encomenda</strong>
+                                </div>
+                                <a class="small-button whatsapp-link"
+                                    href="https://wa.me/551197101154?text=Olá!%20Gostaria%20de%20encomendar%20o%20Copo%20Lufa-Lufa."
+                                    target="_blank" rel="noopener noreferrer">
+                                    <i class="ri-whatsapp-line" aria-hidden="true"></i>
+                                    Encomendar
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card de produto: Copo Luna Lovegood -->
+                    <article class="product-card" data-category="magico">
+                        <div class="card-image">
+                            <img src="./assets/images/copo-luna-lovegood-personalizado.png"
+                                alt="Copo Luna Lovegood personalizado" loading="lazy">
+                            <span class="badge card-tag pink-tag">Exclusivo</span>
+                        </div>
+                        <div class="product-body">
+                            <span class="product-category">Wizarding World</span>
+                            <h3>Copo Luna Lovegood</h3>
+                            <p>
+                                Uma criação delicada e mágica inspirada na personalidade única da
+                                personagem.
+                            </p>
+                            <div class="product-footer">
+                                <div>
+                                    <small>Valor sob consulta</small>
+                                    <strong>Arte Autoral</strong>
+                                </div>
+                                <a class="small-button whatsapp-link"
+                                    href="https://wa.me/551197101154?text=Olá!%20Gostaria%20de%20encomendar%20o%20Copo%20Luna%20Lovegood."
+                                    target="_blank" rel="noopener noreferrer">
+                                    <i class="ri-whatsapp-line" aria-hidden="true"></i>
+                                    Encomendar
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card de produto: Copo Sonserina -->
+                    <article class="product-card" data-category="magico">
+                        <div class="card-image">
+                            <img src="./assets/images/copo-sonserina-personalizado.png"
+                                alt="Copo Sonserina personalizado" loading="lazy">
+                            <span class="badge card-tag gold-tag">Peça Única</span>
+                        </div>
+                        <div class="product-body">
+                            <span class="product-category">Wizarding World</span>
+                            <h3>Copo Sonserina</h3>
+                            <p>
+                                Verde profundo, brilho sofisticado e elementos da casa Sonserina
+                                em uma composição marcante.
+                            </p>
+                            <div class="product-footer">
+                                <div>
+                                    <small>Valor sob consulta</small>
+                                    <strong>Edição Customizada</strong>
+                                </div>
+                                <a class="small-button whatsapp-link"
+                                    href="https://wa.me/551197101154?text=Olá!%20Gostaria%20de%20encomendar%20o%20Copo%20Sonserina."
+                                    target="_blank" rel="noopener noreferrer">
+                                    <i class="ri-whatsapp-line" aria-hidden="true"></i>
+                                    Encomendar
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card de produto: Copo Penélope Charmosa -->
+                    <article class="product-card" data-category="pop">
+                        <div class="card-image">
+                            <img src="./assets/images/copo-penelope-charmosa-personalizado.png"
+                                alt="Copo Penélope Charmosa personalizado" loading="lazy">
+                            <span class="badge card-tag pink-tag">Pink Glow</span>
+                        </div>
+                        <div class="product-body">
+                            <span class="product-category">Coleção Nostalgia Pop</span>
+                            <h3>Penélope Charmosa</h3>
+                            <p>
+                                Rosa intenso, corações, brilho e uma estética retrô cheia de
+                                personalidade.
+                            </p>
+                            <div class="product-footer">
+                                <div>
+                                    <small>Valor sob consulta</small>
+                                    <strong>Exclusivo Glow</strong>
+                                </div>
+                                <a class="small-button whatsapp-link"
+                                    href="https://wa.me/551197101154?text=Olá!%20Gostaria%20de%20encomendar%20o%20Copo%20Penélope%20Charmosa."
+                                    target="_blank" rel="noopener noreferrer">
+                                    <i class="ri-whatsapp-line" aria-hidden="true"></i>
+                                    Encomendar
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card de produto: Copo Olho Grego -->
+                    <article class="product-card" data-category="acessorios">
+                        <div class="card-image">
+                            <img src="./assets/images/copo-olho-grego-personalizado.png"
+                                alt="Copo Olho Grego personalizado" loading="lazy">
+                            <span class="badge card-tag gold-tag">Proteção</span>
+                        </div>
+                        <div class="product-body">
+                            <span class="product-category">Coleção Mística</span>
+                            <h3>Copo Olho Grego</h3>
+                            <p>
+                                Azul vibrante, miçangas e símbolos de proteção em uma composição
+                                artesanal.
+                            </p>
+                            <div class="product-footer">
+                                <div>
+                                    <small>Valor sob consulta</small>
+                                    <strong>Peça Personalizada</strong>
+                                </div>
+                                <a class="small-button whatsapp-link"
+                                    href="https://wa.me/551197101154?text=Olá!%20Gostaria%20de%20encomendar%20o%20Copo%20Olho%20Grego."
+                                    target="_blank" rel="noopener noreferrer">
+                                    <i class="ri-whatsapp-line" aria-hidden="true"></i>
+                                    Encomendar
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card de produto: Pingentes e Acessórios -->
+                    <article class="product-card" data-category="acessorios">
+                        <div class="card-image">
+                            <img src="./assets/images/acessorios-pingentes-personalizados.png"
+                                alt="Pingentes e acessórios personalizados Glow Magic" loading="lazy">
+                            <span class="badge card-tag pink-tag">Acessórios</span>
+                        </div>
+                        <div class="product-body">
+                            <span class="product-category">Detalhes Especiais</span>
+                            <h3>Pingentes Personalizados</h3>
+                            <p>
+                                Acessórios para deixar seu copo ainda mais especial e cheio de
+                                personalidade.
+                            </p>
+                            <div class="product-footer">
+                                <div>
+                                    <small>Valor sob consulta</small>
+                                    <strong>Escolha o Seu</strong>
+                                </div>
+                                <a class="small-button whatsapp-link"
+                                    href="https://wa.me/551197101154?text=Olá!%20Gostaria%20de%20conhecer%20os%20pingentes%20personalizados."
+                                    target="_blank" rel="noopener noreferrer">
+                                    <i class="ri-whatsapp-line" aria-hidden="true"></i>
+                                    Consultar
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Processo de Criação (Craft) -->
+        <section class="craft section">
+            <div class="container craft-grid">
+                <!-- Conteúdo textual do processo -->
+                <div class="craft-content">
+                    <span class="eyebrow">
+                        <i class="ri-flask-line" aria-hidden="true"></i>
+                        Bancada Artesanal
+                    </span>
+
+                    <h2>
+                        A alquimia por trás de cada <em>criação cintilante.</em>
+                    </h2>
+
+                    <p>
+                        Cada etapa é realizada com paciência, cuidado e atenção aos detalhes
+                        para que o resultado final seja bonito e especial.
+                    </p>
+
+                    <!-- Passos do processo de criação -->
+                    <div class="steps">
+                        <article>
+                            <span>1</span>
+                            <div>
+                                <h3>Escolha do Tema</h3>
+                                <p>
+                                    Definimos cores, personagens e referências da sua peça.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <span>2</span>
+                            <div>
+                                <h3>Montagem Manual</h3>
+                                <p>
+                                    Aplicamos os elementos decorativos e acabamentos escolhidos.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <span>3</span>
+                            <div>
+                                <h3>Finalização</h3>
+                                <p>
+                                    Conferimos detalhes, brilho, composição e acabamento.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <span>4</span>
+                            <div>
+                                <h3>Preparação para Envio</h3>
+                                <p>
+                                    A peça é protegida e preparada para chegar com segurança.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Imagem e legenda do processo -->
+                <div class="craft-image">
+                    <img src="./assets/images/glow-magic-materiais-e-insumos.png"
+                        alt="Materiais organizados para produção dos copos Glow Magic" loading="lazy">
+
+                    <div class="image-caption">
+                        <span>
+                            <i class="ri-camera-line" aria-hidden="true"></i>
+                            Ao vivo no ateliê
+                        </span>
+                        <span>Lote artesanal sob demanda</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Galeria de Imagens -->
+        <section class="gallery section" id="galeria">
+            <div class="container">
+                <!-- Cabeçalho da seção de galeria -->
+                <div class="section-heading centered">
+                    <span class="eyebrow">
+                        <i class="ri-gallery-line" aria-hidden="true"></i>
+                        Galeria de Criações
+                    </span>
+
+                    <h2>Momentos & Reflexos Mágicos</h2>
+
+                    <p>
+                        Conheça algumas das criações personalizadas da Glow Magic.
+                    </p>
+                </div>
+
+                <!-- Grade de itens da galeria -->
+                <div class="gallery-grid">
+                    <!-- Cada botão é um item da galeria que abre o lightbox -->
+                    <button class="gallery-item" type="button"
+                        data-image="./assets/images/copo-barbie-personalizado.png"
+                        aria-label="Ampliar imagem Copo Barbie personalizado">
+                        <img src="./assets/images/copo-barbie-personalizado.png" alt="Copo Barbie personalizado"
+                            loading="lazy">
+                        <span class="gallery-zoom"><i class="ri-zoom-in-line" aria-hidden="true"></i></span>
+                    </button>
+
+                    <button class="gallery-item" type="button"
+                        data-image="./assets/images/copo-enhypen-personalizado.png"
+                        aria-label="Ampliar imagem Copo Enhypen personalizado">
+                        <img src="./assets/images/copo-enhypen-personalizado.png" alt="Copo Enhypen personalizado"
+                            loading="lazy">
+                        <span class="gallery-zoom"><i class="ri-zoom-in-line" aria-hidden="true"></i></span>
+                    </button>
+
+                    <button class="gallery-item" type="button"
+                        data-image="./assets/images/copo-fundo-do-mar-personalizado.png"
+                        aria-label="Ampliar imagem Copo Fundo do Mar personalizado">
+                        <img src="./assets/images/copo-fundo-do-mar-personalizado.png"
+                            alt="Copo Fundo do Mar personalizado" loading="lazy">
+                        <span class="gallery-zoom"><i class="ri-zoom-in-line" aria-hidden="true"></i></span>
+                    </button>
+
+                    <button class="gallery-item" type="button"
+                        data-image="./assets/images/copo-hello-kitty-personalizado.png"
+                        aria-label="Ampliar imagem Copo Hello Kitty personalizado">
+                        <img src="./assets/images/copo-hello-kitty-personalizado.png"
+                            alt="Copo Hello Kitty personalizado" loading="lazy">
+                        <span class="gallery-zoom"><i class="ri-zoom-in-line" aria-hidden="true"></i></span>
+                    </button>
+
+                    <button class="gallery-item" type="button"
+                        data-image="./assets/images/copo-high-school-musical-personalizado.png"
+                        aria-label="Ampliar imagem Copo High School Musical personalizado">
+                        <img src="./assets/images/copo-high-school-musical-personalizado.png"
+                            alt="Copo High School Musical personalizado" loading="lazy">
+                        <span class="gallery-zoom"><i class="ri-zoom-in-line" aria-hidden="true"></i></span>
+                    </button>
+
+                    <button class="gallery-item" type="button"
+                        data-image="./assets/images/copo-lufa-lufa-personalizado.png"
+                        aria-label="Ampliar imagem Copo Lufa-Lufa personalizado">
+                        <img src="./assets/images/copo-lufa-lufa-personalizado.png" alt="Copo Lufa-Lufa personalizado"
+                            loading="lazy">
+                        <span class="gallery-zoom"><i class="ri-zoom-in-line" aria-hidden="true"></i></span>
+                    </button>
+
+                    <button class="gallery-item" type="button"
+                        data-image="./assets/images/copo-luna-lovegood-personalizado.png"
+                        aria-label="Ampliar imagem Copo Luna Lovegood personalizado">
+                        <img src="./assets/images/copo-luna-lovegood-personalizado.png"
+                            alt="Copo Luna Lovegood personalizado" loading="lazy">
+                        <span class="gallery-zoom"><i class="ri-zoom-in-line" aria-hidden="true"></i></span>
+                    </button>
+
+                    <button class="gallery-item" type="button"
+                        data-image="./assets/images/copo-olho-grego-personalizado.png"
+                        aria-label="Ampliar imagem Copo Olho Grego personalizado">
+                        <img src="./assets/images/copo-olho-grego-personalizado.png" alt="Copo Olho Grego personalizado"
+                            loading="lazy">
+                        <span class="gallery-zoom"><i class="ri-zoom-in-line" aria-hidden="true"></i></span>
+                    </button>
+
+                    <button class="gallery-item" type="button"
+                        data-image="./assets/images/copo-penelope-charmosa-personalizado.png"
+                        aria-label="Ampliar imagem Copo Penélope Charmosa personalizado">
+                        <img src="./assets/images/copo-penelope-charmosa-personalizado.png"
+                            alt="Copo Penélope Charmosa personalizado" loading="lazy">
+                        <span class="gallery-zoom"><i class="ri-zoom-in-line" aria-hidden="true"></i></span>
+                    </button>
+
+                    <button class="gallery-item" type="button"
+                        data-image="./assets/images/copo-sonserina-personalizado.png"
+                        aria-label="Ampliar imagem Copo Sonserina personalizado">
+                        <img src="./assets/images/copo-sonserina-personalizado.png" alt="Copo Sonserina personalizado"
+                            loading="lazy">
+                        <span class="gallery-zoom"><i class="ri-zoom-in-line" aria-hidden="true"></i></span>
+                    </button>
+
+                    <button class="gallery-item" type="button"
+                        data-image="./assets/images/acessorios-pingentes-personalizados.png"
+                        aria-label="Ampliar imagem Acessórios e pingentes personalizados">
+                        <img src="./assets/images/acessorios-pingentes-personalizados.png"
+                            alt="Acessórios e pingentes personalizados" loading="lazy">
+                        <span class="gallery-zoom"><i class="ri-zoom-in-line" aria-hidden="true"></i></span>
+                    </button>
+
+                    <button class="gallery-item" type="button"
+                        data-image="./assets/images/glow-magic-apresentacao-institucional.png"
+                        aria-label="Ampliar imagem institucional Glow Magic">
+                        <img src="./assets/images/glow-magic-apresentacao-institucional.png"
+                            alt="Apresentação institucional Glow Magic" loading="lazy">
+                        <span class="gallery-zoom"><i class="ri-zoom-in-line" aria-hidden="true"></i></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Cuidados com a Peça -->
+        <section class="care section" id="cuidados">
+            <div class="container narrow-container">
+                <!-- Cabeçalho da seção de cuidados -->
+                <div class="section-heading centered">
+                    <span class="eyebrow">
+                        <i class="ri-service-line" aria-hidden="true"></i>
+                        Durabilidade & Manutenção
+                    </span>
+
+                    <h2>Como Cuidar da sua Peça</h2>
+
+                    <p>
+                        Alguns cuidados simples ajudam a preservar o brilho e o acabamento
+                        do seu copo personalizado.
+                    </p>
+                </div>
+
+                <!-- Lista de itens do acordeão (cuidados) -->
+                <div class="accordion-list">
+                    <article class="accordion-item open">
+                        <button class="accordion-button" type="button" aria-expanded="true">
+                            <i class="ri-shake-hands-line accordion-leading-icon" aria-hidden="true"></i>
+                            <span>Lavar somente à mão</span>
+                            <i class="ri-subtract-line accordion-icon" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="accordion-content">
+                            <p>
+                                Utilize sabão neutro, água em temperatura ambiente e o lado
+                                macio da esponja.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="accordion-item">
+                        <button class="accordion-button" type="button" aria-expanded="false">
+                            <i class="ri-fridge-line accordion-leading-icon" aria-hidden="true"></i>
+                            <span>Não levar ao micro-ondas ou lava-louças</span>
+                            <i class="ri-add-line accordion-icon" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="accordion-content">
+                            <p>
+                                Altas temperaturas e jatos de água podem comprometer a vedação,
+                                a resina e os detalhes decorativos.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="accordion-item">
+                        <button class="accordion-button" type="button" aria-expanded="false">
+                            <i class="ri-alert-line accordion-leading-icon" aria-hidden="true"></i>
+                            <span>Evitar quedas e impactos</span>
+                            <i class="ri-add-line accordion-icon" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="accordion-content">
+                            <p>
+                                Impactos fortes podem danificar a resina, cristais, pingentes e
+                                outros ornamentos artesanais.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="accordion-item">
+                        <button class="accordion-button" type="button" aria-expanded="false">
+                            <i class="ri-sun-line accordion-leading-icon" aria-hidden="true"></i>
+                            <span>Evitar calor extremo</span>
+                            <i class="ri-add-line accordion-icon" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="accordion-content">
+                            <p>
+                                Não deixe o copo exposto ao sol intenso ou dentro de veículos
+                                fechados por longos períodos.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Perguntas Frequentes (FAQ) -->
+        <section class="faq section" id="faq">
+            <div class="container narrow-container">
+                <!-- Cabeçalho da seção FAQ -->
+                <div class="section-heading centered">
+                    <span class="eyebrow">
+                        <i class="ri-question-line" aria-hidden="true"></i>
+                        Dúvidas Frequentes
+                    </span>
+
+                    <h2>Tudo o que Você Precisa Saber</h2>
+
+                    <p>
+                        Consulte as principais informações sobre encomendas, personalização
+                        e envio.
+                    </p>
+                </div>
+
+                <!-- Lista de itens do acordeão (FAQ) -->
+                <div class="accordion-list">
+                    <article class="accordion-item">
+                        <button class="accordion-button" type="button" aria-expanded="false">
+                            <i class="ri-shopping-bag-3-line accordion-leading-icon" aria-hidden="true"></i>
+                            <span>Como faço para encomendar?</span>
+                            <i class="ri-add-line accordion-icon" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="accordion-content">
+                            <p>
+                                Clique em qualquer botão de WhatsApp da página e informe o tema,
+                                cores, nome e detalhes desejados.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="accordion-item">
+                        <button class="accordion-button" type="button" aria-expanded="false">
+                            <i class="ri-palette-line accordion-leading-icon" aria-hidden="true"></i>
+                            <span>Posso escolher qualquer tema?</span>
+                            <i class="ri-add-line accordion-icon" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="accordion-content">
+                            <p>
+                                Sim. A proposta é desenvolver peças personalizadas de acordo com
+                                suas referências e preferências.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="accordion-item">
+                        <button class="accordion-button" type="button" aria-expanded="false">
+                            <i class="ri-calendar-line accordion-leading-icon" aria-hidden="true"></i>
+                            <span>Qual é o prazo de produção?</span>
+                            <i class="ri-add-line accordion-icon" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="accordion-content">
+                            <p>
+                                O prazo varia de acordo com a complexidade da peça e a agenda de
+                                produção. Consulte a disponibilidade pelo WhatsApp.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="accordion-item">
+                        <button class="accordion-button" type="button" aria-expanded="false">
+                            <i class="ri-truck-line accordion-leading-icon" aria-hidden="true"></i>
+                            <span>Como funcionam os envios?</span>
+                            <i class="ri-add-line accordion-icon" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="accordion-content">
+                            <p>
+                                As peças são protegidas com embalagem reforçada. As opções de
+                                envio são informadas durante o atendimento.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Contato e Chamada para Ação -->
+        <section class="contact section" id="contato">
+            <div class="container contact-box">
+                <span class="contact-symbol">
+                    <i class="ri-sparkling-2-line" aria-hidden="true"></i>
+                </span>
+
+                <span class="eyebrow">Sua Ideia em Alta Joalheria</span>
+
+                <h2>
+                    Pronta para ter sua peça mágica e
+                    <em>exclusiva?</em>
+                </h2>
+
+                <p>
+                    Fale diretamente conosco pelo WhatsApp e transforme sua ideia em uma
+                    peça personalizada.
+                </p>
+
+                <!-- Botão principal de contato WhatsApp -->
+                <a class="button button-primary contact-button whatsapp-link" href="https://wa.me/5511959797360"
+                    target="_blank" rel="noopener noreferrer">
+                    <i class="ri-whatsapp-line" aria-hidden="true"></i>
+                    Falar no WhatsApp
+                </a>
+
+                <!-- Link para o Instagram -->
+                <a class="instagram-link" href="https://www.instagram.com/_glowmagic_/" target="_blank"
+                    rel="noopener noreferrer">
+                    <i class="ri-instagram-line" aria-hidden="true"></i>
+                    Siga-nos no Instagram <strong>@_glowmagic_</strong>
+                </a>
+
+                <!-- Informações de contato adicionais -->
+                <div class="contact-info">
+                    <div>
+                        <strong>
+                            <i class="ri-customer-service-2-line" aria-hidden="true"></i>
+                            Atendimento
+                        </strong>
+                        <span>WhatsApp: consulte disponibilidade</span>
+                    </div>
+
+                    <div>
+                        <strong>
+                            <i class="ri-mail-line" aria-hidden="true"></i>
+                            Contato Direto
+                        </strong>
+                        <span>Consulte pelo WhatsApp</span>
+                    </div>
+
+                    <div>
+                        <strong>
+                            <i class="ri-truck-line" aria-hidden="true"></i>
+                            Despacho
+                        </strong>
+                        <span>Ateliê online — consulte envio</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé do site -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <!-- Logo da marca no rodapé com link para o início -->
+            <a class="footer-brand" href="#inicio" aria-label="Voltar ao início">
+                <img src="./assets/images/glow_magic_logotipo.png" alt="Glow Magic" width="145" height="80">
+            </a>
+
+            <!-- Badges de destaque no rodapé -->
+            <div class="footer-badges">
+                <span>
+                    <i class="ri-hand-heart-line" aria-hidden="true"></i>
+                    Feito à Mão
+                </span>
+
+                <span>
+                    <i class="ri-vip-diamond-line" aria-hidden="true"></i>
+                    Peça Única
+                </span>
+            </div>
+
+            <!-- Links sociais no rodapé -->
+            <div class="footer-links">
+                <a href="https://www.instagram.com/_glowmagic_/" target="_blank" rel="noopener noreferrer">
+                    <i class="ri-instagram-line" aria-hidden="true"></i>
+                    @_glowmagic_
+                </a>
+
+                <a href="https://wa.me/5511959797360" target="_blank" rel="noopener noreferrer">
+                    <i class="ri-whatsapp-line" aria-hidden="true"></i>
+                    WhatsApp Exclusivo
+                </a>
+            </div>
+
+            <!-- Informações de copyright com ano atualizado via JavaScript -->
+            <p class="copyright">
+                © <span id="current-year"></span> <!-- O ano será inserido aqui pelo JavaScript -->
+                Glow Magic — Copos Personalizados. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Botão flutuante do WhatsApp -->
+    <a class="whatsapp-floating whatsapp-link" href="https://wa.me/5511959797360" target="_blank"
+        rel="noopener noreferrer" aria-label="Falar com a Glow Magic pelo WhatsApp">
+        <i class="ri-whatsapp-line" aria-hidden="true"></i>
+    </a>
+
+    <!-- Botão flutuante de voltar ao topo -->
+    <button class="scroll-top" type="button" aria-label="Voltar ao topo">
+        <i class="ri-arrow-up-line" aria-hidden="true"></i>
+    </button>
+
+    <!-- Lightbox para visualização de imagens da galeria -->
+    <div class="lightbox" role="dialog" aria-modal="true" aria-label="Visualizador de imagens" aria-hidden="true">
+        <button class="lightbox-close" type="button" aria-label="Fechar visualizador">
+            <i class="ri-close-line" aria-hidden="true"></i>
+        </button>
+
+        <button class="lightbox-prev" type="button" aria-label="Imagem anterior">
+            <i class="ri-arrow-left-s-line" aria-hidden="true"></i>
+        </button>
+
+        <img class="lightbox-image" src="" alt=""> <!-- Imagem exibida no lightbox -->
+
+        <button class="lightbox-next" type="button" aria-label="Próxima imagem">
+            <i class="ri-arrow-right-s-line" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <!-- Link para o arquivo JavaScript principal -->
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
