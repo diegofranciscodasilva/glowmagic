@@ -30,6 +30,7 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 90px;
+    overflow-x: clip;
     /* compensa o header fixo ao usar âncoras (#id) */
 }
 
@@ -112,7 +113,6 @@ i[class*=" ri-"] {
     width: 125px;
     height: 70px;
     object-fit: contain;
-    background: #fff;
 }
 
 .main-nav {
@@ -216,6 +216,7 @@ i[class*=" ri-"] {
     align-items: center;
     min-height: 850px;
     padding-top: 150px;
+    overflow: clip;
     background:
         radial-gradient(circle at 82% 28%, rgba(219, 39, 119, .14), transparent 30%),
         linear-gradient(180deg, #190815, #281523);
@@ -768,6 +769,17 @@ h2 em {
 .steps article {
     display: flex;
     gap: 18px;
+    padding: 22px;
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    background: rgba(56, 35, 50, .62);
+    transition: transform .25s ease, background .25s ease, border-color .25s ease;
+}
+
+.steps article:hover {
+    border-color: var(--border);
+    background: rgba(68, 46, 61, .9);
+    transform: translateY(-6px);
 }
 
 .steps article>span {
@@ -884,6 +896,7 @@ h2 em {
     overflow: hidden;
     border-radius: 14px;
     background: rgba(56, 35, 50, .58);
+    transition: background .3s ease, box-shadow .3s ease;
 }
 
 .accordion-button {
@@ -913,6 +926,7 @@ h2 em {
 .accordion-icon {
     font-family: sans-serif;
     font-size: 23px;
+    transition: transform .3s ease;
 }
 
 .accordion-content {
@@ -927,6 +941,9 @@ h2 em {
     padding: 0 22px;
     color: var(--muted);
     font-size: 14px;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: padding-bottom .3s ease, opacity .3s ease, transform .3s ease;
 }
 
 .accordion-item.open .accordion-content {
@@ -936,6 +953,8 @@ h2 em {
 
 .accordion-item.open .accordion-content p {
     padding-bottom: 22px;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* ===== CONTATO / CTA FINAL ===== */
@@ -1064,6 +1083,32 @@ h2 em {
 .copyright {
     color: var(--muted);
     font-size: 14px;
+}
+
+.footer__bottom {
+    width: min(100% - 40px, var(--container));
+    margin: 28px auto 0;
+    padding-top: 22px;
+    border-top: 1px solid rgba(233, 195, 73, .28);
+}
+
+.footer__copy {
+    color: var(--pink-light);
+    font-family: Montserrat, sans-serif;
+    font-size: 11px;
+    letter-spacing: .04em;
+}
+
+.footer__copy a {
+    color: var(--gold);
+    font-weight: 700;
+    transition: color .25s ease, text-shadow .25s ease;
+}
+
+.footer__copy a:hover,
+.footer__copy a:focus-visible {
+    color: var(--gold-light);
+    text-shadow: 0 0 12px rgba(233, 195, 73, .45);
 }
 
 /* ===== BOTÕES FLUTUANTES (WhatsApp fixo + scroll-to-top) ===== */
@@ -1222,6 +1267,11 @@ h2 em {
     color: #fff;
 }
 
+.whatsapp-floating {
+    position: fixed;
+    z-index: 60;
+}
+
 /* ===== ACESSIBILIDADE: estados de foco visível (navegação por teclado) ===== */
 .gallery-item:focus-visible,
 .accordion-button:focus-visible,
@@ -1278,8 +1328,8 @@ h2 em {
     }
 }
 
-/* Mobile: menu hambúrguer + colunas empilhadas */
-@media (max-width: 800px) {
+/* Mobile e tablets estreitos: menu hambúrguer + colunas empilhadas */
+@media (max-width: 900px) {
     .section {
         padding: 80px 0;
     }
@@ -1399,7 +1449,7 @@ h2 em {
 }
 
 /* Ajustes finos adicionais para mobile (menu acima do lightbox, imagem de cuidados sem limite de altura) */
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     .main-nav {
         z-index: 60;
     }
