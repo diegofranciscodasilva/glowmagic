@@ -14,19 +14,19 @@ puros, sem framework, bundler ou dependências instaladas localmente.
 
 ## Funcionalidades
 
-- Header fixo com navegação por âncoras.
-- Menu responsivo com botão hambúrguer em telas menores.
-- Destaque automático da seção ativa durante a rolagem.
-- Hero institucional com chamada para contato pelo WhatsApp.
-- Seções de essência da marca, diferenciais e processo artesanal.
-- Catálogo de produtos com filtros por categoria.
-- Links de WhatsApp com mensagens pré-preenchidas para contato geral e produtos específicos.
-- Galeria responsiva com lightbox, navegação por setas e teclado.
-- Accordions exclusivos para cuidados com a peça e perguntas frequentes.
-- Botão flutuante do WhatsApp e botão de retorno ao topo.
+- Header fixo com navegação por âncoras e destaque automático da seção ativa no scroll.
+- Menu responsivo para mobile com botão hambúrguer e comportamento acessível via teclado.
+- Hero institucional com call-to-action em WhatsApp, badges de destaque e estatísticas da marca.
+- Seções de apresentação da Glow Magic, essência da marca, diferenciais e processo artesanal.
+- Catálogo de produtos com filtros por categoria para mostrar itens específicos da coleção.
+- Botões de contato com mensagens pré-preenchidas no WhatsApp para atendimento geral e por produto.
+- Galeria responsiva com lightbox, navegação por setas, fechamento pelo botão/teclado e informações do item selecionado.
+- Blocos de cuidados da peça e FAQ em accordion com interação de abertura/fechamento exclusiva.
+- Botão flutuante do WhatsApp para conversão rápida e botão de retorno ao topo.
 - Atualização automática do ano no rodapé.
-- Metadados básicos de SEO, favicon, `robots.txt` e `sitemap.xml`.
-- Estados de foco para navegação por teclado e suporte a preferência de movimento reduzido.
+- Estrutura otimizada para SEO com meta tags, Open Graph, Twitter Cards, favicon, `robots.txt` e `sitemap.xml`.
+- Acessibilidade com foco visível, suporte a movimento reduzido, uso de atributos ARIA e navegação por teclado.
+- Layout premium adaptado para desktop, tablet e celular com foco em visual luxuoso e identidade da marca.
 
 ## Tecnologias
 
@@ -81,14 +81,15 @@ glowmagic/
 As principais seções estão em `index.html`:
 
 1. Início e apresentação principal.
-2. Nossa essência.
-3. Diferenciais.
-4. Produtos em destaque.
-5. Processo de criação.
-6. Galeria.
+2. Nossa essência e filosofia da marca.
+3. Diferenciais e valores de produção.
+4. Produtos em destaque e catálogo.
+5. Processo de criação artesanal.
+6. Galeria de peças e materiais.
 7. Cuidados com a peça.
 8. Perguntas frequentes.
-9. Contato.
+9. Depoimentos de clientes.
+10. Contato e CTA final.
 
 ## Onde fazer alterações
 
@@ -107,13 +108,14 @@ início de `assets/css/style.css`, dentro de `:root` e das seções de layout.
 
 As interações ficam em `assets/js/script.js`:
 
-- menu mobile;
-- navegação ativa;
+- menu mobile e estado de abertura/fechamento;
+- navegação ativa conforme a seção visível;
 - botão de retorno ao topo;
-- filtros do catálogo;
-- accordions;
-- lightbox da galeria;
-- atualização do ano do rodapé.
+- filtros do catálogo por categoria;
+- accordions de cuidados e FAQ;
+- lightbox da galeria com navegação por setas e teclado;
+- foco e acessibilidade para navegação via teclado;
+- atualização automática do ano no rodapé.
 
 ### Imagens
 
