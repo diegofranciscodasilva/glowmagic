@@ -1,3 +1,4 @@
+/* ===== JavaScript - Funções e Eventos ===== */
 document.addEventListener("DOMContentLoaded", () => {
     // ===== Seleção dos elementos do menu (mobile) e navegação =====
     const menuToggle = document.querySelector(".menu-toggle")

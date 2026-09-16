@@ -1,13 +1,8 @@
-/* ===== VARIÁVEIS GLOBAIS DE TEMA (cores, raio, sombra, container) ===== */
+/* ===== VARIÁVEIS GLOBAIS DE TEMA ===== */
 :root {
     --bg: #1f0d1b;
     --bg-deep: #190815;
     --bg-soft: #281523;
-    /* atualmente não utilizada em nenhum seletor */
-    --card: #2d1927;
-    /* atualmente não utilizada em nenhum seletor */
-    --card-light: #382332;
-    /* atualmente não utilizada em nenhum seletor */
     --text: #fad9ed;
     --muted: #d5b9c7;
     --gold: #e9c349;
@@ -115,13 +110,6 @@ i[class*=" ri-"] {
     object-fit: contain;
 }
 
-/* Logo do rodapé (um pouco maior, já que tem mais espaço vertical) */
-.footer-brand img {
-    width: 190px;
-    height: 105px;
-    object-fit: contain;
-}
-
 .main-nav {
     display: flex;
     align-items: center;
@@ -170,7 +158,6 @@ i[class*=" ri-"] {
 .badge,
 .card-tag,
 .image-label,
-.instagram-link,
 .footer-badges span,
 .footer-links a,
 .contact-info strong,
@@ -226,7 +213,7 @@ i[class*=" ri-"] {
     overflow: clip;
     background:
         radial-gradient(circle at 82% 28%, rgba(219, 39, 119, .14), transparent 30%),
-        linear-gradient(180deg, #190815, #281523);
+        linear-gradient(180deg, var(--bg-deep), var(--bg-soft));
 }
 
 /* Manchas de luz decorativas ao fundo do hero */
@@ -284,9 +271,13 @@ i[class*=" ri-"] {
     color: var(--gold);
 }
 
-.badge.pink,
+.badge.pink-light,
 .pink-tag {
     color: var(--pink-light);
+}
+
+.badge.pink {
+    color: var(--pink);
 }
 
 h1,
@@ -407,7 +398,7 @@ h2 em {
 
 /* ===== SEÇÃO SOBRE / ESSÊNCIA ===== */
 .about {
-    background: #281523;
+    background: var(--bg-soft);
 }
 
 .about-image {
@@ -616,7 +607,7 @@ h2 em {
 .products,
 .gallery,
 .faq {
-    background: #281523;
+    background: var(--bg-soft);
 }
 
 .products-heading {
@@ -916,6 +907,18 @@ h2 em {
     transform: translateY(0);
 }
 
+/* ===== SEÇÃO "COMO CUIDAR DA SUA PEÇA" ===== */
+.care-feature {
+    margin-bottom: 30px;
+}
+
+.care-feature img {
+    width: 100%;
+    max-height: 620px;
+    border-radius: 14px;
+    object-fit: cover;
+}
+
 /* ===== ACCORDION / FAQ =====
    Ícone alternado entre "+" e "-" via JS (classes ri-add-line / ri-subtract-line).
    Abertura/fechamento animado usando grid-template-rows (0fr -> 1fr). */
@@ -990,13 +993,12 @@ h2 em {
 }
 
 /* ===== SEÇÃO DE AVALIAÇÕES ===== */
-
 .testimonials {
     background:
         radial-gradient(circle at 15% 30%,
             rgba(219, 39, 119, .08),
             transparent 28%),
-        #281523;
+        var(--bg-soft);
 }
 
 .testimonials-grid {
@@ -1124,37 +1126,6 @@ h2 em {
     font-size: 12px;
 }
 
-/* ===== RESPONSIVIDADE DAS AVALIAÇÕES ===== */
-
-@media (max-width: 900px) {
-    .testimonials-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .testimonial-card:last-child {
-        grid-column: 1 / -1;
-        max-width: 420px;
-        width: 100%;
-        margin-inline: auto;
-    }
-}
-
-@media (max-width: 560px) {
-    .testimonials-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .testimonial-card:last-child {
-        grid-column: auto;
-        max-width: none;
-    }
-
-    .testimonial-card {
-        min-height: 330px;
-        padding: 30px 22px 24px;
-    }
-}
-
 /* ===== CONTATO / CTA FINAL ===== */
 .contact {
     background: var(--bg-deep);
@@ -1248,6 +1219,34 @@ h2 em {
     font-size: 13px;
 }
 
+/* Link de WhatsApp com destaque visual (contorno ao hover/focus) */
+.whatsapp-link {
+    position: relative;
+    color: var(--pink-light, #ffb1c7);
+}
+
+.whatsapp-link::after {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border: 1px solid rgba(255, 177, 199, .28);
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity .25s ease;
+    pointer-events: none;
+}
+
+.whatsapp-link:hover::after,
+.whatsapp-link:focus-visible::after {
+    opacity: 1;
+}
+
+/* Quando o link de WhatsApp usa o estilo de botão principal, o texto fica branco */
+.button-header.whatsapp-link,
+.button-primary.whatsapp-link {
+    color: #fff;
+}
+
 /* ===== RODAPÉ ===== */
 .site-footer {
     padding: 80px 0 45px;
@@ -1262,8 +1261,11 @@ h2 em {
     gap: 25px;
 }
 
+/* Tamanho exclusivo da logo no rodapé */
 .footer-brand img {
-    width: 145px;
+    width: 180px;
+    height: auto;
+    object-fit: contain;
 }
 
 .footer-badges,
@@ -1275,20 +1277,12 @@ h2 em {
 }
 
 .footer-badges span {
-    color: var(--gold);
+
     font-family: Montserrat, sans-serif;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: .08em;
     text-transform: uppercase;
-}
-
-.footer-badges span+span {
-    color: var(--pink-light);
-}
-
-.footer-badges span+span+span {
-    color: var(--pink);
 }
 
 .footer-links a {
@@ -1450,51 +1444,6 @@ h2 em {
     border-color: rgba(233, 195, 73, .35);
 }
 
-/* ===== SEÇÃO "COMO CUIDAR DA SUA PEÇA" ===== */
-.care-feature {
-    margin-bottom: 30px;
-}
-
-.care-feature img {
-    width: 100%;
-    max-height: 620px;
-    border-radius: 14px;
-    object-fit: cover;
-}
-
-/* Link de WhatsApp com destaque visual (contorno ao hover/focus) */
-.whatsapp-link {
-    position: relative;
-    color: var(--pink-light, #ffb1c7);
-}
-
-.whatsapp-link::after {
-    content: "";
-    position: absolute;
-    inset: -3px;
-    border: 1px solid rgba(255, 177, 199, .28);
-    border-radius: inherit;
-    opacity: 0;
-    transition: opacity .25s ease;
-    pointer-events: none;
-}
-
-.whatsapp-link:hover::after,
-.whatsapp-link:focus-visible::after {
-    opacity: 1;
-}
-
-/* Quando o link de WhatsApp usa o estilo de botão principal, o texto fica branco */
-.button-header.whatsapp-link,
-.button-primary.whatsapp-link {
-    color: #fff;
-}
-
-.whatsapp-floating {
-    position: fixed;
-    z-index: 60;
-}
-
 /* ===== ACESSIBILIDADE: estados de foco visível (navegação por teclado) ===== */
 .gallery-item:focus-visible,
 .accordion-button:focus-visible,
@@ -1523,7 +1472,6 @@ h2 em {
 }
 
 /* ===== RESPONSIVIDADE ===== */
-
 /* Telas médias (tablets) */
 @media (max-width: 1100px) {
     .main-nav {
@@ -1580,6 +1528,8 @@ h2 em {
         top: 72px;
         right: 15px;
         left: 15px;
+        z-index: 60;
+        /* garante que o menu fique acima do lightbox */
         display: flex;
         flex-direction: column;
         align-items: stretch;
@@ -1669,35 +1619,14 @@ h2 em {
         border-top: 1px solid var(--border);
         border-left: 0;
     }
-}
 
-/* Ajustes finos adicionais para mobile (menu acima do lightbox, imagem de cuidados sem limite de altura) */
-@media (max-width: 900px) {
-    .main-nav {
-        z-index: 60;
-    }
-
+    /* Ajuste fino de mobile: imagem de cuidados sem limite de altura */
     .care-feature img {
         max-height: none;
     }
 }
 
-/* Telas pequenas: ajustes de galeria e espaçamento */
-@media (max-width: 560px) {
-    .product-body p {
-        min-height: 0;
-    }
-
-    .gallery-item {
-        min-height: 170px;
-    }
-
-    .care-feature {
-        padding: 10px;
-    }
-}
-
-/* Telas muito pequenas: grids viram coluna única, imagens menores */
+/* Telas pequenas e muito pequenas: ajustes de galeria, espaçamento e grids em coluna única */
 @media (max-width: 560px) {
     h1 {
         font-size: 42px;
@@ -1726,6 +1655,10 @@ h2 em {
         left: 12px;
     }
 
+    .product-body p {
+        min-height: 0;
+    }
+
     .product-body h3 {
         font-size: 24px;
     }
@@ -1747,6 +1680,7 @@ h2 em {
 
     .gallery-item {
         height: 170px;
+        /* height fixo já resolve o dimensionamento — */
     }
 
     /* Em telas pequenas, ícone de zoom fica sempre visível (sem hover em touch) */
@@ -1761,6 +1695,10 @@ h2 em {
         font-size: 18px;
     }
 
+    .care-feature {
+        padding: 10px;
+    }
+
     .contact-box {
         padding: 60px 18px;
     }
@@ -1769,6 +1707,20 @@ h2 em {
         min-width: 0;
         width: 100%;
         font-size: 11px;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-card:last-child {
+        grid-column: auto;
+        max-width: none;
+    }
+
+    .testimonial-card {
+        min-height: 330px;
+        padding: 30px 22px 24px;
     }
 
     .whatsapp-floating,
