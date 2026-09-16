@@ -76,6 +76,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const updateActiveNav = () => {
         const currentPosition = window.scrollY + 180 // offset para compensar o header fixo
 
+        // Remove "active" de todos os links antes de verificar a section atual
+        // (evita que o último link marcado "trave" ao passar da última section)
+        navLinks.forEach(link => link.classList.remove("active"))
+
         sections.forEach(section => {
             const sectionTop = section.offsetTop
             const sectionBottom = sectionTop + section.offsetHeight
@@ -89,7 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 currentPosition < sectionBottom &&
                 relatedLink
             ) {
-                navLinks.forEach(link => link.classList.remove("active"))
                 relatedLink.classList.add("active")
             }
         })
