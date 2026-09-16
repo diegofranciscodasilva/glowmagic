@@ -884,6 +884,26 @@ h2 em {
     transform: scale(1.07);
 }
 
+/* Nome do copo exibido sobre a imagem da galeria */
+.gallery-item-name {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    max-width: calc(100% - 28px);
+    padding: 5px 12px;
+    overflow: hidden;
+    border-radius: 999px;
+    color: var(--text);
+    background: rgba(25, 8, 21, .72);
+    font-family: Montserrat, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .03em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 .gallery-zoom {
     position: absolute;
     right: 14px;
@@ -1410,6 +1430,42 @@ h2 em {
     border-radius: 12px;
     background: #190815;
     object-fit: contain;
+}
+
+/* === LIGHT-BOX === */
+/* Bloco de informações detalhadas (nome + descrição) abaixo da imagem ampliada */
+.lightbox-info {
+    position: absolute;
+    right: 0;
+    bottom: 25px;
+    left: 0;
+    max-width: min(900px, 90vw);
+    margin-inline: auto;
+    padding: 16px 24px;
+    border-radius: 14px;
+    background: rgba(25, 8, 21, .85);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity .3s ease, transform .3s ease;
+}
+
+.lightbox.open .lightbox-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.lightbox-info-name {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--gold);
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+}
+
+.lightbox-info-description {
+    color: var(--muted);
+    font-size: 14px;
 }
 
 .lightbox-close,

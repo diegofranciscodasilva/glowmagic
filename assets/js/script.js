@@ -1,4 +1,4 @@
-/* ===== JavaScript - Funções e Eventos ===== */
+/* ===== JAVASCRIPT - Funções e Eventos ===== */
 document.addEventListener("DOMContentLoaded", () => {
     // ===== Seleção dos elementos do menu (mobile) e navegação =====
     const menuToggle = document.querySelector(".menu-toggle")
@@ -23,6 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const lightboxClose = document.querySelector(".lightbox-close")
     const lightboxPrev = document.querySelector(".lightbox-prev")
     const lightboxNext = document.querySelector(".lightbox-next")
+
+    // Elementos do bloco de informações detalhadas dentro do lightbox (novo)
+    const lightboxInfoName = document.querySelector(".lightbox-info-name")
+    const lightboxInfoDescription = document.querySelector(".lightbox-info-description")
 
     // Ano atual exibido no rodapé
     const currentYear = document.querySelector("#current-year")
@@ -119,8 +123,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // ===== FILTRO DE PRODUTOS =====
     // Ao clicar em um filtro, marca o botão ativo e mostra/esconde os cards
     // conforme o atributo data-category de cada card bater com o data-filter do botão.
-    // IMPORTANTE: para adicionar uma nova categoria, crie um novo botão com o data-filter
-    // correspondente e garanta que os cards usem o mesmo valor em data-category.
     filterButtons.forEach(button => {
         button.addEventListener("click", () => {
             const selectedFilter = button.dataset.filter
@@ -186,18 +188,22 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     // ===== GALERIA + LIGHTBOX =====
-    // Extrai a imagem (e o texto alternativo) do item da galeria clicado.
-    // Prioriza data-image (caso exista uma versão em alta resolução), senão usa o <img> do card.
+    // Extrai imagem, texto alternativo, nome e descrição do item da galeria clicado.
+    // data-name e data-description são novos atributos adicionados no HTML da galeria.
     const getGalleryImage = item => {
         const image = item.querySelector("img")
 
         return {
             source: item.dataset.image || image?.currentSrc || image?.src || "",
-            alt: image?.alt || "Imagem da galeria Glow Magic"
+            alt: image?.alt || "Imagem da galeria Glow Magic",
+            name: item.dataset.name || image?.alt || "Criação Glow Magic",
+            description:
+                item.dataset.description ||
+                "Peça artesanal personalizada, feita com carinho e atenção aos detalhes."
         }
     }
 
-    // Atualiza a imagem exibida dentro do lightbox com base no índice atual
+    // Atualiza a imagem e as informações detalhadas exibidas dentro do lightbox
     const updateLightbox = () => {
         if (!lightboxImage || galleryItems.length === 0) {
             return
@@ -207,6 +213,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         lightboxImage.src = galleryImage.source
         lightboxImage.alt = galleryImage.alt
+
+        // Preenche nome e descrição no bloco de informações do lightbox (novo)
+        if (lightboxInfoName) {
+            lightboxInfoName.textContent = galleryImage.name
+        }
+
+        if (lightboxInfoDescription) {
+            lightboxInfoDescription.textContent = galleryImage.description
+        }
     }
 
     // Abre o lightbox no índice clicado, salva o elemento com foco anterior (acessibilidade)
@@ -227,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
         lightboxClose?.focus()
     }
 
-    // Fecha o lightbox, limpa a imagem e devolve o foco para o elemento que abriu a galeria
+    // Fecha o lightbox, limpa a imagem e as informações, e devolve o foco ao elemento anterior
     const closeLightbox = () => {
         if (!lightbox) {
             return
@@ -239,6 +254,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (lightboxImage) {
             lightboxImage.src = ""
+        }
+
+        // Limpa também as informações detalhadas ao fechar (novo)
+        if (lightboxInfoName) {
+            lightboxInfoName.textContent = ""
+        }
+
+        if (lightboxInfoDescription) {
+            lightboxInfoDescription.textContent = ""
         }
 
         if (lastFocusedElement instanceof HTMLElement) {
